@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from library.forms import AuthorForm
 from library.models import Author
 from django.views import View
 
@@ -8,4 +9,18 @@ class AuthorListView(View):
     def get(self, request):
         authors = Author.objects.all()
         return render(request, 'library/author_list.html', {'authors': authors})
+
+
+class AuthorCreateView(View):
+    def get(self, request):
+        form = AuthorForm()
+        return render(request, 'library/author_form.html', {'form': form})
+
+    def post(self, request):
+        form = AuthorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('author-list')
+        return render(request, 'library/author_form.html', {'form': form})
+
 
