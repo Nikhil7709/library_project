@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from library.forms import AuthorForm
-from library.models import Author
+from library.models import Author, Book
 from django.views import View
 
 # Create your views here.
@@ -22,5 +22,11 @@ class AuthorCreateView(View):
             form.save()
             return redirect('author-list')
         return render(request, 'library/author_form.html', {'form': form})
+
+
+class BookListView(View):
+    def get(self, request):
+        books = Book.objects.select_related('author')
+        return render(request, 'library/book_list.html', {'books': books})
 
 

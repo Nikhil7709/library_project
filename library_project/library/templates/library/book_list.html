@@ -1,0 +1,19 @@
+{% extends 'library/base.html' %}
+
+{% block content %}
+<h2>Books</h2>
+
+{% comment %} <a href="{% url 'book-add' %}">Add Book</a> {% endcomment %}
+
+<ul>
+    {% for book in books %}
+        <li>
+            {{ book.title }} |
+            {{ book.author.name }} |
+            {{ book.published_date }}
+        </li>
+    {% empty %}
+        <li>No books available</li>
+    {% endfor %}
+</ul>
+{% endblock %}
