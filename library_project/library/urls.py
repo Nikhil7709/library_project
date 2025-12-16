@@ -1,5 +1,5 @@
 from django.urls import path
-from library.views import AuthorListView, AuthorCreateView, BookListView
+from library.views import AuthorListView, AuthorCreateView, BookListView, BookCreateView
 
 
 urlpatterns = [
@@ -7,4 +7,5 @@ urlpatterns = [
     path('authors/add/', AuthorCreateView.as_view(), name='author-add'),
     
     path('books/', BookListView.as_view(), name='book-list'),
+    path('books/add/', BookCreateView.as_view(), name='book-add'),
 ]
