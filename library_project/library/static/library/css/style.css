@@ -1,0 +1,71 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 16px 32px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Main container */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 24px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Buttons */
+a.button {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+a.button:hover {
+    background-color: #2980b9;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background-color: #ecf0f1;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 12px;
+    font-size: 13px;
+    color: #777;
+}

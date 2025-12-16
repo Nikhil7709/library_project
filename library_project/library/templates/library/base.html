@@ -1,11 +1,40 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 <html>
 <head>
     <title>Library System</title>
+    <link rel="stylesheet" href="{% static 'library/css/styles.css' %}">
 </head>
 <body>
     <h1>Library Management</h1>
     <hr>
     {% block content %}{% endblock %}
+</body>
+</html> {% endcomment %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library System</title>
+
+    <link rel="stylesheet" href="{% static 'library/css/style.css' %}">
+</head>
+
+<body>
+
+<header>
+    <h1>Library Management System</h1>
+</header>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<footer>
+    © 2025 Library Project | Built with Django
+</footer>
+
 </body>
 </html>
