@@ -6,3 +6,8 @@ class AuthorForm(forms.ModelForm):
         model = Author
         fields = ['name', 'email', 'address']
 
+
+class BookForm(forms.ModelForm):
+    class Meta:
+        model = Book
+        fields = ['title', 'published_date', 'author']
