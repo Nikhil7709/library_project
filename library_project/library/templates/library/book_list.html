@@ -1,19 +1,35 @@
 {% extends 'library/base.html' %}
 
 {% block content %}
-<h2>Books</h2>
+<h2>Book List</h2>
 
-<a href="{% url 'book-add' %}">Add Book</a>
+<p>
+    <a href="{% url 'book-add' %}" class="button primary">+ Add Book</a>
+</p>
 
-<ul>
-    {% for book in books %}
-        <li>
-            {{ book.title }} |
-            {{ book.author.name }} |
-            {{ book.published_date }}
-        </li>
-    {% empty %}
-        <li>No books available</li>
-    {% endfor %}
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Published Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author.name }}</td>
+            <td>{{ book.published_date }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="3" style="text-align: center;">
+                No books available
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
