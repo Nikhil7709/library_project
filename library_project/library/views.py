@@ -23,6 +23,7 @@ class AuthorListView(View):
 #             return redirect('author-list')
 #         return render(request, 'library/author_form.html', {'form': form})
 
+from django.contrib import messages
 
 class AuthorCreateView(View):
     template_name = 'library/author_form.html'
@@ -35,7 +36,7 @@ class AuthorCreateView(View):
         form = AuthorForm(request.POST)
         if form.is_valid():
             form.save()
-            # messages.success(request, "Author added successfully!")
+            messages.success(request, "Author added successfully!")
             return redirect('author-list')
         else:
             # Form errors are automatically available in the template
