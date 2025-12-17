@@ -11,17 +11,36 @@ class AuthorListView(View):
         return render(request, 'library/author_list.html', {'authors': authors})
 
 
+# class AuthorCreateView(View):
+#     def get(self, request):
+#         form = AuthorForm()
+#         return render(request, 'library/author_form.html', {'form': form})
+
+#     def post(self, request):
+#         form = AuthorForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('author-list')
+#         return render(request, 'library/author_form.html', {'form': form})
+
+from django.contrib import messages
+
 class AuthorCreateView(View):
+    template_name = 'library/author_form.html'
+
     def get(self, request):
         form = AuthorForm()
-        return render(request, 'library/author_form.html', {'form': form})
+        return render(request, self.template_name, {'form': form})
 
     def post(self, request):
         form = AuthorForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Author added successfully!")
             return redirect('author-list')
-        return render(request, 'library/author_form.html', {'form': form})
+        else:
+            # Form errors are automatically available in the template
+            return render(request, self.template_name, {'form': form})
 
 
 class BookListView(View):
@@ -40,6 +59,7 @@ class BookCreateView(View):
         form = BookForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Book added successfully!")
             return redirect('book-list')
         return render(request, 'library/book_form.html', {'form': form})
 

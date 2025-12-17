@@ -141,3 +141,35 @@ footer {
 .button.secondary:hover {
     background-color: #c0392b;
 }
+
+/* Error alert styling */
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 8px 12px;
+    margin-top: 6px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.alert-success {
+    background-color: #e6fffa;
+    color: #065f46;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #7f1d1d;
+}
+.alert-info {
+    background-color: #eff6ff;
+    color: #1e40af;
+}
