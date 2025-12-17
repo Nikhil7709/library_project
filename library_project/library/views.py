@@ -59,6 +59,7 @@ class BookCreateView(View):
         form = BookForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Book added successfully!")
             return redirect('book-list')
         return render(request, 'library/book_form.html', {'form': form})
 
