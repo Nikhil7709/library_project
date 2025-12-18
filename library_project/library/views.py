@@ -85,7 +85,6 @@ class AuthorCreateView(View):
             )
 
 
-
 class BookListView(View):
     """
     Handles GET request.
@@ -113,7 +112,6 @@ for book in books:
     book.author.name
 
 """
-
 
 
 class BookCreateView(View):
